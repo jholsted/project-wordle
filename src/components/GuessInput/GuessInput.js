@@ -1,6 +1,7 @@
 import React from 'react';
+import Keyboard from '../Keyboard';
 
-function GuessInput({ handleSubmitGuess, status }) {
+function GuessInput({ validatedGuesses, handleSubmitGuess, status }) {
   const [tentativeGuess, setTentativeGuess] = React.useState('');
 
   function handleSubmit(e) {
@@ -26,6 +27,11 @@ function GuessInput({ handleSubmitGuess, status }) {
           setTentativeGuess(nextGuess);
         }}
         disabled={status !== 'playing'}
+      />
+      <Keyboard
+        validatedGuesses={validatedGuesses}
+        tentativeGuess={tentativeGuess}
+        setTentativeGuess={setTentativeGuess}
       />
     </form>
   );
