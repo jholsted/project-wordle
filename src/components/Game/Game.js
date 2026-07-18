@@ -25,6 +25,10 @@ function Game() {
     }
   }
 
+  function handleValidateGuess(tentativeGuess) {
+    return WORDS.includes(tentativeGuess.toUpperCase());
+  }
+
   function handleRestartGame() {
     const nextAnswer = sample(WORDS);
     setAnswer(nextAnswer);
@@ -40,6 +44,7 @@ function Game() {
       <GuessInput
         handleSubmitGuess={handleSubmitGuess}
         status={status}
+        handleValidateGuess={handleValidateGuess}
         validatedGuesses={validatedGuesses}
       />
       {status === 'won' && (
