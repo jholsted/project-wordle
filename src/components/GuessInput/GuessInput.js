@@ -34,7 +34,7 @@ function GuessInput({ validatedGuesses, handleSubmitGuess, handleValidateGuess, 
         }}
         disabled={status !== 'playing'}
       />
-      {validatationMessage && <div class="input-message">{validatationMessage}</div>}
+      {validatationMessage && <div className="input-message">{validatationMessage}</div>}
       <Keyboard
         validatedGuesses={validatedGuesses}
         tentativeGuess={tentativeGuess}
